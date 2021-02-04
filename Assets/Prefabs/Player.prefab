@@ -109,7 +109,6 @@ GameObject:
   - component: {fileID: 8993762378168868157}
   - component: {fileID: 8614545150515154454}
   - component: {fileID: 4767343864264455697}
-  - component: {fileID: 1824958568745073758}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -228,6 +227,13 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   moveSpeed: 0.5
+  isDead: 0
+  isRespawned: 0
+  player_MeshRenderer: {fileID: 4767343864264455702}
+  DeadBody_MeshRenderer: {fileID: 3207856749999732229}
+  Respawn_Point: {fileID: 1838262296278218677, guid: de7a953eef6af414a8c2b50f653e8860,
+    type: 3}
+  Deadbody: {fileID: 1041699698789254196}
 --- !u!54 &8614545150515154454
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -258,24 +264,3 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1824958568745073758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4767343864264455696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb45e6103b21df4469cfec6201238c02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  player_death: 0
-  player_respawn: 0
-  player_MeshRenderer: {fileID: 4767343864264455702}
-  DeadBody_MeshRenderer: {fileID: 3207856749999732229}
-  Respawn_Point: {fileID: 1838262296278218677, guid: de7a953eef6af414a8c2b50f653e8860,
-    type: 3}
-  Deadbody: {fileID: 1041699698789254196}
