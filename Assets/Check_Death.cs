@@ -35,6 +35,7 @@ public class Check_Death : NetworkBehaviour
         }
     }
 
+
     private void dead()
     {
         player_MeshRenderer.enabled = false;
