@@ -19,12 +19,6 @@ public class movement : MonoBehaviour
         transform.Rotate(0, horizontal, 0);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.name == "target")
-        {
-            Destroy(gameObject);
-        }
-    }
+
 
 }

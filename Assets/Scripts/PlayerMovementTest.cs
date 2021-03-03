@@ -18,6 +18,8 @@ public class PlayerMovementTest : NetworkBehaviour
     public GameObject Respawn_Point;
     public GameObject Deadbody;
 
+    public float rotationspeed = 100.0f;
+
     private void Update()
     {
         if (isDead == false)
@@ -46,12 +48,22 @@ public class PlayerMovementTest : NetworkBehaviour
 
     private void PlayerMove()
     {
+        /*        if (!isLocalPlayer) return;
+
+                float moveHorizontal = Input.GetAxis("Horizontal");
+                float moveVertical = Input.GetAxis("Vertical");
+                Vector3 movement = new Vector3(moveHorizontal * moveSpeed, 0, moveVertical * moveSpeed);
+                transform.position = transform.position + movement;*/
+
         if (!isLocalPlayer) return;
 
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(moveHorizontal * moveSpeed, 0, moveVertical * moveSpeed);
-        transform.position = transform.position + movement;
+        float vertical = Input.GetAxis("Vertical") * moveSpeed;
+        float horizontal = Input.GetAxis("Horizontal") * rotationspeed;
+
+        vertical *= Time.deltaTime;
+        horizontal *= Time.deltaTime;
+        transform.Translate(0, 0, vertical);
+        transform.Rotate(0, horizontal, 0);
     }
 
 
